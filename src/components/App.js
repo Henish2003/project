@@ -1,17 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Header from "./components/Header";
-// import Footer from "./components/Footer";
-import HomePage from "./components/HomePage";
+import Con from "./components/Content";
+import HomePage from "./components/Home";
 import Services from "./components/Services";
+import ContentMarketing from "./components/ContentMarketing";
+import Contact from "./components/Contact";
 import Choose from "./components/Choose";
 import Page from "./components/Page";
-import Content from "./components/Content";
-import Marketing from "./components/marketing";
-import Work from "./components/work";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-
 
 
 function App() {
@@ -20,14 +16,11 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/choose" element={<Choose />} />
-        <Route path="/page" element={<Page />} />
-        <Route path="/content" element={<Content />} />
-        <Route path="/market" element={<Marketing />} />
-        <Route path="/work" element={<Work />} />
+        <Route path="/content" element={<ContentMarketing />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/footer" element={<Footer />} />
-
+        <Route path="/choose" element={<Choose />} />
+        <Route path="/con" element={<Con />} />
+        <Route path="/page" element={<Page />} />
 
 
 

@@ -49,12 +49,11 @@ const Page = () => {
       >
         <div
           style={{
-            width: "300px", // Adjusted to make it wider
-            height: "400px", // Taller to resemble an owl shape
-            borderRadius: "30% 30% 30% 20%", // Adjusting the radius to give a more oval, owl-like shape
+            width: "300px", // Set equal width and height
+            height: "300px", // Equal to width for a perfect circle
+            borderRadius: "50%", // Makes it circular
             overflow: "hidden",
-            border: "5px solid #d4f263",
-            transform: "rotate(35deg)", // Rotating the shape at a 15-degree slope
+            border: "5px solid #d4f263", // Border around the circular image
           }}
         >
           <img

@@ -15,11 +15,11 @@ const Info = () => {
     >
       <div
         style={{
-          backgroundColor: "rgba(128, 224, 72, 0.5)",
+          backgroundColor: "rgb(128, 224, 72)", // Fully opaque green color
           padding: "30px",
           borderRadius: "10px",
-          maxWidth: "800px",  // Optional: To control the width of the card
-          margin: "0 auto",  // Centers the card
+          maxWidth: "800px", // Optional: To control the width of the card
+          margin: "0 auto", // Centers the card
         }}
       >
         <h1
@@ -35,7 +35,6 @@ const Info = () => {
         <p
           style={{
             color: "#000",
-
             fontSize: "18px",
             lineHeight: "1.6",
             marginBottom: "20px",

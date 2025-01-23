@@ -1,89 +1,112 @@
 import React from "react";
+import holistic from './holistic.jpg';
+import result from './result.jpg';
+import tailor from './tailor.jpg';
 
 const reasons = [
   {
     title: "Tailored Solutions",
-    image: "https://illustrations.popsy.co/amber/solution.svg",
+    image: tailor,
   },
   {
     title: "Holistic Approach",
-    image: "https://illustrations.popsy.co/amber/strategy.svg",
+    image: holistic,
   },
   {
     title: "Results Driven",
-    image: "https://illustrations.popsy.co/amber/growth.svg",
+    image: result,
   },
 ];
 
-const Choose = () => {
+function WhyChooseUs() {
   return (
-    <div style={containerStyle}>
+    <section style={sectionStyle}>
       <h2 style={headingStyle}>WHY CHOOSE US?</h2>
       <div style={gridStyle}>
         {reasons.map((reason, index) => (
-          <div key={index} style={cardStyle}>
-            <div style={imageContainerStyle}>
+          <div key={index} style={reasonCardStyle}>
+            <div style={reasonImageContainerStyle}>
               <img
                 src={reason.image}
                 alt={reason.title}
-                style={imageStyle}
+                style={reasonImgStyle}
               />
+              <div style={overlayTextContainerStyle}>
+                <h3 style={overlayTextStyle}>{reason.title}</h3>
+              </div>
             </div>
-            <h3 style={titleStyle}>{reason.title}</h3>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
-};
+}
 
-const containerStyle = {
-  padding: "50px 20px",
-  backgroundColor: "#d4f263",
+const sectionStyle = {
+  padding: "50px",
+  backgroundColor: "#D0FF86",
   fontFamily: "Arial, sans-serif",
-  textAlign: "center",
 };
 
 const headingStyle = {
   fontSize: "36px",
   fontWeight: "bold",
+  textAlign: "center",
   marginBottom: "40px",
+  textTransform: "uppercase",
 };
 
 const gridStyle = {
-  display: "flex",
-  justifyContent: "center",
-  gap: "40px",
-  flexWrap: "wrap",
-};
-
-const cardStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gap: "40px", // Increased gap between items for better spacing
   textAlign: "center",
-  width: "150px",
 };
 
-const imageContainerStyle = {
-  width: "120px",
-  height: "120px",
-  borderRadius: "50%",
+const reasonCardStyle = {
+  textAlign: "center",
+  transition: "transform 300ms",
+};
+
+const reasonImageContainerStyle = {
+  position: "relative",
   overflow: "hidden",
-  margin: "0 auto 20px",
-  backgroundColor: "#fff",
+  borderRadius: "9999px",
+  margin: "0 auto 1.5rem",
+  backgroundColor: "white",
+  padding: "1.5rem", // Increased padding for larger circles
+  width: "15rem", // Increased width
+  height: "15rem", // Increased height
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  transition: "box-shadow 300ms",
 };
 
-const imageStyle = {
+const reasonImgStyle = {
   width: "100%",
   height: "100%",
   objectFit: "cover",
+  transition: "transform 300ms",
+  borderRadius: "9999px",
 };
 
-const titleStyle = {
-  fontSize: "18px",
+const overlayTextContainerStyle = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  textAlign: "center", // Ensure text is centered
+};
+
+const overlayTextStyle = {
+  color: "#fff",
   fontWeight: "bold",
+  fontSize: "16px", // Increased font size for better readability
+  textShadow: "1px 1px 2px rgba(0, 0, 0, 0.7)",
 };
 
-export default Choose;
+export default WhyChooseUs;
