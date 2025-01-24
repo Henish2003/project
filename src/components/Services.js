@@ -75,10 +75,11 @@ const gridStyle = {
 };
 
 const serviceBoxStyle = {
-  border: "2px solid #000",
+  border: "5px solid #ec4899", // Thickened border
   padding: "20px",
   backgroundColor: "#e7ffd3",
 };
+
 
 const serviceTitleStyle = {
   fontSize: "20px",

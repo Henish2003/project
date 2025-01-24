@@ -1,7 +1,7 @@
 import React from "react";
-import holistic from './holistic.jpg';
-import result from './result.jpg';
-import tailor from './tailor.jpg';
+import holistic from "./holistic.jpg";
+import result from "./result.jpg";
+import tailor from "./tailor.jpg";
 
 const reasons = [
   {
@@ -59,7 +59,7 @@ const headingStyle = {
 const gridStyle = {
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
-  gap: "40px", // Increased gap between items for better spacing
+  gap: "10px", // Spacing between items
   textAlign: "center",
 };
 
@@ -71,12 +71,10 @@ const reasonCardStyle = {
 const reasonImageContainerStyle = {
   position: "relative",
   overflow: "hidden",
-  borderRadius: "9999px",
+  borderRadius: "9999px", // Ensures the container is circular
   margin: "0 auto 1.5rem",
-  backgroundColor: "white",
-  padding: "1.5rem", // Increased padding for larger circles
-  width: "15rem", // Increased width
-  height: "15rem", // Increased height
+  width: "15rem", // Circle width
+  height: "15rem", // Circle height
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -84,11 +82,10 @@ const reasonImageContainerStyle = {
 };
 
 const reasonImgStyle = {
-  width: "100%",
-  height: "100%",
-  objectFit: "cover",
-  transition: "transform 300ms",
-  borderRadius: "9999px",
+  width: "100%", // Full width of the container
+  height: "100%", // Full height of the container
+  objectFit: "cover", // Ensures the image fills the circle proportionally
+  borderRadius: "9999px", // Ensures the image stays circular
 };
 
 const overlayTextContainerStyle = {
@@ -99,7 +96,7 @@ const overlayTextContainerStyle = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  textAlign: "center", // Ensure text is centered
+  textAlign: "center",
 };
 
 const overlayTextStyle = {

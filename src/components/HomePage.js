@@ -1,31 +1,27 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import bgm from './bgm.jpg'; // Replace with the correct relative path to your image
 import img3m from './1st.jpg'; // Replace with the correct path for the marketing image
 import logo from './logom.jpg';
 import Services from "./Services";
 import Choose from "./Choose";
-import Page from "./Page";
-import Content from "./Content";
-import Marketing from "./marketing";
-import Work from "./work";
-import Contact from "./Contact";
 import Footer from "./Footer";
 
 function AboutUs() {
   const [menuOpen, setMenuOpen] = useState(false); // State to toggle the menu
+  const navigate = useNavigate(); // Use the useNavigate hook for navigation
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen); // Toggle the menu visibility
   };
 
-  const navigateTo = (section) => {
-    document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+  const navigateTo = (path) => {
+    navigate(path); // Navigate to the specified route
     setMenuOpen(false); // Close the menu after navigation
   };
 
   return (
     <div>
-      {/* Wrapper for AboutUs-specific styles */}
       <div
         style={{
           fontFamily: "'Poppins', sans-serif",
@@ -38,7 +34,6 @@ function AboutUs() {
           position: "relative",
         }}
       >
-        {/* Logo */}
         <div
           style={{
             fontSize: "24px",
@@ -59,7 +54,6 @@ function AboutUs() {
           />
         </div>
 
-        {/* Menu Button */}
         <div
           style={{
             position: "absolute",
@@ -81,7 +75,6 @@ function AboutUs() {
           </svg>
         </div>
 
-        {/* Dropdown Menu */}
         {menuOpen && (
           <div
             style={{
@@ -103,9 +96,9 @@ function AboutUs() {
                   color: "#000",
                   fontWeight: "bold",
                 }}
-                onClick={() => navigateTo("about-section")}
+                onClick={() => navigateTo("/")} // Navigate to Home route
               >
-                About Us
+                Home
               </li>
               <li
                 style={{
@@ -114,7 +107,7 @@ function AboutUs() {
                   color: "#000",
                   fontWeight: "bold",
                 }}
-                onClick={() => navigateTo("services-section")}
+                onClick={() => navigateTo("/page")} // Navigate to Services route
               >
                 Services
               </li>
@@ -125,15 +118,13 @@ function AboutUs() {
                   color: "#000",
                   fontWeight: "bold",
                 }}
-                onClick={() => navigateTo("contact-section")}
+                onClick={() => navigateTo("/work")} // Navigate to Contact Us route
               >
                 Contact Us
               </li>
             </ul>
           </div>
         )}
-
-
 
         {/* Main Section */}
         <div
@@ -148,7 +139,7 @@ function AboutUs() {
           <div style={{ flex: "1 1 45%", margin: "10px" }}>
             <h1
               style={{
-                fontSize: "60px",
+                fontSize: "80px",
                 fontWeight: "700",
                 color: "#000",
                 textAlign: "left",
@@ -160,18 +151,19 @@ function AboutUs() {
               ONE-STOP SOLUTION <br /> TO YOUR BUSINESS <br /> PROBLEMS
             </h1>
             <button
-              style={{
-                marginTop: "20px",
-                backgroundColor: "#9C27B0",
-                color: "#fff",
-                border: "none",
-                padding: "15px 25px",
-                borderRadius: "8px",
-                fontSize: "18px",
-                fontWeight: "bold",
-                cursor: "pointer",
-              }}
-            >
+  style={{
+    marginTop: "20px",
+    marginLeft: "90px", // Adjust this value to move the button to the right
+    backgroundColor: "#9C27B0",
+    color: "#fff",
+    border: "none",
+    padding: "15px 25px",
+    borderRadius: "8px",
+    fontSize: "18px",
+    fontWeight: "bold",
+    cursor: "pointer",
+  }}
+>
               Book a Session Now
             </button>
           </div>
@@ -195,18 +187,21 @@ function AboutUs() {
               padding: "5px",
             }}
           >
-            <img
-            src={img3m} // Use the imported marketing image
-            alt="Marketing Strategies"
-            style={{
-              width: "50%", // Make it responsive
-              height: "auto", // Maintain aspect ratio
-              maxWidth: "300px", // Increased max width for a larger image
-              borderRadius: "8px",
-              border: "5px solid green", // Green border
-              boxShadow: "0 4px 6px rgba(0,0,0,0.2)",
-            }}
-          />
+          <img
+  src={img3m} // Use the imported marketing image
+  alt="Marketing Strategies"
+  style={{
+    width: "100%", // Make it responsive
+    maxWidth: "500px", // Increased max width for a larger image
+    height: "auto", // Maintain aspect ratio unless maxHeight is hit
+    maxHeight: "300px", // Shorten the height if it exceeds this value
+    borderRadius: "8px",
+    border: "5px solid green", // Green border
+    boxShadow: "0 4px 6px rgba(0,0,0,0.2)",
+    objectFit: "cover", // Ensures the image fits nicely
+  }}
+/>
+
           </div>
 
           <div
@@ -237,11 +232,6 @@ function AboutUs() {
       {/* Other Components */}
       <Services />
       <Choose />
-      <Page />
-      <Content />
-      <Marketing />
-      <Work />
-      <Contact />
       <Footer />
     </div>
   );
