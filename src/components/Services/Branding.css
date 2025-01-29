@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Lekton:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lekton', sans-serif; /* Set the default font to Lekton */
+}
+
+.research-full-page-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.research-content-container {
+    flex: 1;
+    background-color: #c4ec55; /* Light green background */
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000; /* Black text */
+    text-align: center;
+}
+
+.research-max-width {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.research-heading {
+    font-size: 3.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.research-subheading {
+    font-size: 3.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.research-benefits {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.research-benefits p {
+    font-size: 1.2rem;
+    color: #cc00cc; /* Pink text */
+    font-weight: 550;
+    text-align: left;
+    margin-bottom: 0rem; /* Adjust this value to reduce the gap */
+}
+
+.research-highlight {
+    font-family: 'Arial', sans-serif; /* Change font for only this element */
+    font-size: 1.5rem;
+    color: #cc00cc; /* Pink text */
+    font-weight: 700;
+    text-align: center;
+}
+
+.research-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.research-grid-cols-1 {
+    grid-template-columns: 1fr; /* One item per row */
+}
+
+.research-section {
+    display: flex;
+    flex-direction: row; /* Align icon and text in a row */
+    align-items: flex-start; /* Align text to the top of the icon */
+    gap: 1.5rem; /* Increased gap between icon and text */
+}
+
+.research-icon-large {
+    width: 6rem; /* Increased size of the icon */
+    height: 6rem; /* Increased size of the icon */
+    color: #000; /* Black icon */
+}
+
+.research-section h3 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove padding */
+    text-align: left;
+}
+
+.research-section p {
+    font-size: 1.1rem;
+    color: #cc00cc; /* Pink text */
+    font-weight: 500;
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    text-align: left; /* Ensure text is aligned to the left */
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import holistic from "./holistic.jpg";
 import result from "./result.jpg";
 import tailor from "./tailor.jpg";
@@ -19,6 +19,19 @@ const reasons = [
 ];
 
 function WhyChooseUs() {
+  useEffect(() => {
+    // Dynamically load Google Fonts
+    const link = document.createElement("link");
+    link.href =
+      "https://fonts.googleapis.com/css2?family=Lekton:wght@400;700&display=swap";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link); // Cleanup when component unmounts
+    };
+  }, []);
+
   return (
     <section style={sectionStyle}>
       <h2 style={headingStyle}>WHY CHOOSE US?</h2>
@@ -43,13 +56,13 @@ function WhyChooseUs() {
 }
 
 const sectionStyle = {
-  padding: "50px",
+  padding: "30px",
   backgroundColor: "#D0FF86",
-  fontFamily: "Arial, sans-serif",
+  fontFamily: "'Lekton', sans-serif", // Apply Lekton font
 };
 
 const headingStyle = {
-  fontSize: "36px",
+  fontSize: "60px",
   fontWeight: "bold",
   textAlign: "center",
   marginBottom: "40px",
@@ -101,9 +114,11 @@ const overlayTextContainerStyle = {
 
 const overlayTextStyle = {
   color: "#fff",
-  fontWeight: "bold",
-  fontSize: "16px", // Increased font size for better readability
+  fontWeight: "600",
+  fontSize: "40px", // Increased font size for better readability
   textShadow: "1px 1px 2px rgba(0, 0, 0, 0.7)",
+  fontFamily:"'Onest', serif",
+  
 };
 
 export default WhyChooseUs;

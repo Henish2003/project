@@ -3,11 +3,20 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Menu = () => {
   const [menuOpen, setMenuOpen] = useState(false); // Manage menu state
+  const [servicesOpen, setServicesOpen] = useState(false); // Manage services dropdown state
   const navigate = useNavigate(); // Initialize the navigate function
 
   // Toggle menu visibility
   const toggleMenu = () => {
     setMenuOpen(prevState => !prevState);
+    if (menuOpen) {
+      setServicesOpen(false); // Close services dropdown if menu is closed
+    }
+  };
+
+  // Toggle services dropdown visibility
+  const toggleServices = () => {
+    setServicesOpen(prevState => !prevState);
   };
 
   // Navigate to a different route
@@ -71,9 +80,91 @@ const Menu = () => {
                 color: "#000",
                 fontWeight: "bold",
               }}
-              onClick={() => navigateTo("/page")} // Navigate to Services route
+              onClick={toggleServices} // Toggle services dropdown visibility
             >
               Services
+            </li>
+            {/* Conditionally render services dropdown */}
+            {servicesOpen && (
+              <ul style={{ listStyle: "none", margin: 0, padding: "0 0 0 20px" }}>
+                <li
+                  style={{
+                    margin: "10px 0",
+                    cursor: "pointer",
+                    color: "#000",
+                    fontWeight: "bold",
+                  }}
+                  onClick={() => navigateTo("/dev")} // Navigate to Web Development with SEO Emphasis route
+                >
+                  Web Development with SEO Emphasis
+                </li>
+                <li
+                  style={{
+                    margin: "10px 0",
+                    cursor: "pointer",
+                    color: "#000",
+                    fontWeight: "bold",
+                  }}
+                  onClick={() => navigateTo("/dig")} // Navigate to Digital Marketing route
+                >
+                  Digital Marketing
+                </li>
+                <li
+                  style={{
+                    margin: "10px 0",
+                    cursor: "pointer",
+                    color: "#000",
+                    fontWeight: "bold",
+                  }}
+                  onClick={() => navigateTo("/business")} // Navigate to Business Analysis route
+                >
+                  Business Analysis
+                </li>
+                <li
+                  style={{
+                    margin: "10px 0",
+                    cursor: "pointer",
+                    color: "#000",
+                    fontWeight: "bold",
+                  }}
+                  onClick={() => navigateTo("/research")} // Navigate to Market Research and Strategy route
+                >
+                  Market Research and Strategy
+                </li>
+                <li
+                  style={{
+                    margin: "10px 0",
+                    cursor: "pointer",
+                    color: "#000",
+                    fontWeight: "bold",
+                  }}
+                  onClick={() => navigateTo("/production")} // Navigate to Content Production & Management route
+                >
+                  Content Production & Management
+                </li>
+                <li
+                  style={{
+                    margin: "10px 0",
+                    cursor: "pointer",
+                    color: "#000",
+                    fontWeight: "bold",
+                  }}
+                  onClick={() => navigateTo("/brands")} // Navigate to Branding route
+                >
+                  Branding
+                </li>
+              </ul>
+            )}
+            <li
+              style={{
+                margin: "10px 0",
+                cursor: "pointer",
+                color: "#000",
+                fontWeight: "bold",
+              }}
+              onClick={() => navigateTo("/page")} // Navigate to Contact Us route
+            >
+              Content Marketing
             </li>
             <li
               style={{

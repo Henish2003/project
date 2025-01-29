@@ -1,88 +1,116 @@
 /* Base styles */
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #D0FF86;
-  }
-  
-  /* Card styles */
-  .card {
-    background-color: #D0FF86;
-    border-radius: 2px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    border: 5px solid #ec4899;
-    text-align: center;
-  }
-  
-  .card h3 {
-    font-size: 1.25rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .card p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  /* Container for card rows */
-  .card-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  
-  /* Feature section styles */
-  .feature-section {
-    margin-bottom: 16px;
-  }
-  
-  .feature-section h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  
-  .feature-section p {
-    text-align: center;
-    font-weight: 600;
-    color: #ec4899;
-    margin-bottom: 1rem;
-  }
-  
-  .feature-item {
-    display: flex;
-    align-items: center;
-    text-align: left;
-  }
-  
-  .feature-icon {
-    width: 4rem;
-    height: 4rem;
-    color: #ec4899;
-  }
-  
-  .feature-content {
-    margin-left: 1rem;
-  }
-  
-  .feature-content h3 {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  .feature-content p {
-    color: #ec4899;
-  }
-  
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    background-color: #c4ec55; /* Light green background */
+}
 
+/* Card styles */
+.card {
+  background-color: #c4ec55; /* Light green background */
+  border-radius: 2px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border: 8px solid #ec4899;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Container for card rows */
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 2rem; /* Add horizontal padding */
+  margin: 0 auto; /* Center the container */
+  max-width: 1200px; /* Optional: Control maximum width */
+  width: calc(100% - 4rem); /* Account for the padding */
+}
+
+/* Feature section styles */
+.feature-section {
+  align-items: center;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.feature-section h2 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.feature-section p {
+  text-align: center;
+  font-weight: 600;
+  color: #ec4899;
+  margin-bottom: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start; /* Changed to flex-start to align with the top of content */
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem 0; /* Added padding for better spacing */
+}
+
+.feature-icon {
+  min-width: 6rem; /* Changed from width to min-width */
+  height: 6rem; /* Increased from 4rem to 6rem */
+  color: #0f0e0e;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.feature-content {
+  margin-left: 1.5rem; /* Slightly increased margin */
+}
+
+.feature-content h3 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.feature-content p {
+  color: #ec4899;
+}
+
+/* Specific styling for Lekton font */
+.lekton-font {
+  font-family: 'Lekton', sans-serif;
+  font-size: 3rem;
+  line-height: 1.5;
+  color: #000; /* Adjust text color */
+  text-align: center;
   
+}
+.Arial-font{
+  font-family: 'Arial', sans-serif; /* Change font for only this element */
+  font-size: 1.8rem;
+  color: #cc00cc; /* Pink text */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}

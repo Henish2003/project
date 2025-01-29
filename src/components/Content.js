@@ -13,40 +13,46 @@ const Info = () => {
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <div
-        style={{
-          backgroundColor: "rgb(128, 224, 72)", // Fully opaque green color
-          padding: "30px",
-          borderRadius: "10px",
-          maxWidth: "800px", // Optional: To control the width of the card
-          margin: "0 auto", // Centers the card
-        }}
-      >
-        <h1
+      <h1
           style={{
-            fontSize: "36px",
+            fontSize: "50px",
             fontWeight: "bold",
             lineHeight: "1.5",
             marginBottom: "20px",
+            fontFamily:"'Lekton', sans-serif",
+            textAlign: "center", // Aligns the text to the center of the card 
           }}
         >
-          YOUR HANDBOOK FOR SUCCESSFUL CONTENT MARKETING
+          YOUR HANDBOOK FOR SUCCESSFUL<br/> CONTENT MARKETING
         </h1>
+      <div
+        style={{
+          backgroundColor: "rgb(128, 224, 72)", // Fully opaque green color
+          padding: "10px",
+          borderRadius: "10px",
+          maxWidth: "1000px", // Optional: To control the width of the card
+          margin: "0 auto", // Centers the card
+        }}
+      >
         <p
           style={{
             color: "#000",
-            fontSize: "18px",
+            fontSize: "32px",
             lineHeight: "1.6",
             marginBottom: "20px",
+            textAlign: "center", // Aligns the text to the center of the card
+            fontWeight: "bold", // Makes the text bold
           }}
         >
-          Would you like some help in the online crowd? Could your business stand out and attract more customers?
+          Would you like some help in the online crowd? Could your<br/> business stand out and attract more customers?
         </p>
         <p
           style={{
-            fontSize: "16px",
+            fontSize: "28px",
             lineHeight: "1.6",
             marginBottom: "20px",
+            textAlign: "center", // Aligns the text to the center of the card
+
           }}
         >
           Take advantage of content marketing's power to revolutionize your advertising campaigns. Create captivating content that grabs attention, fosters trust, and encourages customers to engage repeatedly.

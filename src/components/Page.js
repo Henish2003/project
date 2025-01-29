@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import img3m from './img3m.jpg'; // Replace with the correct path for the marketing image
 import Content from "./Content";
 import Marketing from "./marketing";
 import Footer from "./Footer";
 import Menu from "./Menu";
+import { useNavigate } from 'react-router-dom';
+
 const Page = () => {
+  useEffect(() => {
+    // Dynamically load Google Fonts
+    const link = document.createElement("link");
+    link.href =
+      "https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;500;700&family=Lekton:wght@400;700&display=swap";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link); // Cleanup when component unmounts
+    };
+  }, []);
+
+  const navigate = useNavigate();
+
   return (
     <div>
-      <Menu/>
+      <Menu />
       {/* Page Header Section */}
       <div
         style={{
@@ -17,29 +34,32 @@ const Page = () => {
           alignItems: "center",
           justifyContent: "space-between",
           padding: "50px",
-          fontFamily: "Arial, sans-serif",
+          fontFamily: "'Lekton', sans-serif",
         }}
       >
         <div style={{ flex: 1, paddingRight: "20px" }}>
           <h1
             style={{
-              fontSize: "36px",
+              fontFamily: "'MuseoModerno', sans-serif",
+              fontSize: "66px",
               fontWeight: "bold",
               lineHeight: "1.5",
             }}
           >
-            POWERFUL CONTENT MARKETING TO BOOST YOUR BUSINESS
+            POWER CONTENT <br /> BOOST YOUR<br /> BUSINESS
           </h1>
           <button
+            onClick={() => navigate('/work')}
             style={{
               marginTop: "20px",
               padding: "15px 30px",
               backgroundColor: "#c037c5",
               color: "#fff",
               border: "none",
-              fontSize: "16px",
+              fontSize: "30px",
               cursor: "pointer",
-              borderRadius: "5px",
+              borderRadius: "10px",
+              fontFamily: "'Arial', sans-serif",
             }}
           >
             BOOK A SESSION NOW
@@ -55,17 +75,21 @@ const Page = () => {
         >
           <div
             style={{
-              width: "300px", // Set equal width and height
-              height: "300px", // Equal to width for a perfect circle
+              width: "850px", // Set width
+              height: "600px", // Set height to match width
               borderRadius: "50%", // Makes it circular
               overflow: "hidden",
-              border: "5px solid #d4f263", // Border around the circular image
+              position: "relative", // Allow positioning within the container
             }}
           >
             <img
               src={img3m}
               alt="Content Marketing"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover", // Ensures the image covers the container fully
+              }}
             />
           </div>
         </div>
@@ -74,7 +98,7 @@ const Page = () => {
       {/* Additional Components */}
       <Content />
       <Marketing />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

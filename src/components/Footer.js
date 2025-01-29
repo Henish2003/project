@@ -1,5 +1,6 @@
 import React from "react";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import footer from "./footer1.png";
 
 function Footer() {
   return (
@@ -7,20 +8,23 @@ function Footer() {
       <div style={containerStyle}>
         <div style={footerContentStyle}>
           <div style={contactStyle}>
-            <h3 style={contactTitleStyle}>Get a quote or set up a consultation.</h3>
-            <div style={contactDetailContainerStyle}>
-              <div style={contactDetailStyle}>
-                <p style={contactLabelStyle}>PHONE:</p>
-                <p style={contactInfoStyle}>(123) 456-7890</p>
-              </div>
-              <div style={contactDetailStyle}>
-                <p style={contactLabelStyle}>EMAIL:</p>
-                <p style={contactInfoStyle}>hello@reallygreatsite.com</p>
-              </div>
+            <div style={headingWithLogoStyle}>
+              <h3 style={contactTitleStyle}>Get a quote or set<br></br> up a consultation.</h3>
+              <img src={footer} alt="Logo" style={headingLogoStyle} />
             </div>
-            <div style={contactDetailStyle}>
+          </div>
+          <div style={contactDetailContainerStyle}>
+            <div style={contactDetailLeftStyle}>
+              <p style={contactLabelStyle}>PHONE:</p>
+              <p style={contactInfoStyle}>(123) 456-7890</p>
+            </div>
+            <div style={contactDetailMiddleStyle}>
+              <p style={contactLabelStyle}>EMAIL:</p>
+              <p style={contactInfoStyle}>hello@reallygreatsite.com</p>
+            </div>
+            <div style={contactDetailRightStyle}>
               <p style={contactLabelStyle}>SOCIAL:</p>
-              <div style={socialIconsStyle}>
+              <div style={socialIconsContainerStyle}>
                 <a href="#" style={iconLinkStyle}>
                   <Instagram style={iconStyle} />
                 </a>
@@ -36,12 +40,9 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div style={logoContainerStyle}>
-            <div style={logoStyle}>Mázoxi</div>
-          </div>
         </div>
         <div style={footerBottomStyle}>
-          <p>&copy; 2024 Mizoxi. All rights reserved.</p>
+          <p>&copy; 2024 Mázoxi. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -63,46 +64,72 @@ const containerStyle = {
 
 const footerContentStyle = {
   display: "flex",
-  justifyContent: "space-between",
-  alignItems: "flex-start",
+  flexDirection: "column",
 };
 
 const contactStyle = {
-  maxWidth: "60%",
+  marginBottom: "2rem",
+};
+
+const headingWithLogoStyle = {
+  display: "flex",
+  justifyContent: "space-between", // Ensures the text is on the left and image is on the right
+  alignItems: "center", // Vertically center align text and image
 };
 
 const contactTitleStyle = {
-  fontSize: "24px",
-  fontWeight: "bold",
-  marginBottom: "1rem",
+  fontSize: "50px", // Increased font size for the heading
+  fontWeight: 500,
+  color: "#A3E635",
+  margin: 0, // Remove default margin for better alignment
+  fontFamily: "'MuseoModerno', cursive", // Added MuseoModerno font
+  lineHeight: "1.2", // Reduced line-height for tighter spacing
+};
+
+const headingLogoStyle = {
+  width: "300px", // Increased size of the image
+  height: "auto",
+  marginLeft: "1rem", // Add spacing between the heading and the image
 };
 
 const contactDetailContainerStyle = {
   display: "flex",
-  gap: "2rem",
-  marginBottom: "1rem",
+  justifyContent: "space-between", // Spread Phone, Email, and Social horizontally
+  alignItems: "center",
+  marginBottom: "2rem",
 };
 
-const contactDetailStyle = {
-  marginBottom: "1rem",
+const contactDetailLeftStyle = {
+  textAlign: "left",
+};
+
+const contactDetailMiddleStyle = {
+  textAlign: "left",
+};
+
+const contactDetailRightStyle = {
+  textAlign: "left",
 };
 
 const contactLabelStyle = {
   color: "#FFFFFF",
   fontSize: "18px",
   fontWeight: "bold",
+  fontFamily: "'Exo', sans-serif", // Added Exo font for labels
 };
 
 const contactInfoStyle = {
   color: "#9C27B0",
   fontSize: "16px",
-  marginLeft: "10px",
+  fontFamily: "'Exo', sans-serif", // Added Exo font for information
 };
 
-const socialIconsStyle = {
+const socialIconsContainerStyle = {
   display: "flex",
-  alignItems: "center",
-  gap: "0.5rem",
+  gap: "1rem",
+  border: "2px solid #FFFFFF", // White border instead of background
+  padding: "0.5rem",
+  borderRadius: "5px",
 };
 
 const iconLinkStyle = {
@@ -113,17 +140,6 @@ const iconLinkStyle = {
 const iconStyle = {
   width: "24px",
   height: "24px",
-};
-
-const logoContainerStyle = {
-  textAlign: "right",
-};
-
-const logoStyle = {
-  fontSize: "36px",
-  fontWeight: "bold",
-  color: "#A3E635",
-  textShadow: "2px 2px 0 #9C27B0",
 };
 
 const footerBottomStyle = {
